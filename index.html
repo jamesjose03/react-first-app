@@ -14,11 +14,27 @@
 
   <script type="text/babel">
   class App extends React.Component {
+    state = {
+      name: 'James',
+      age: 20
+    }
+    clickHandler(e) {
+      console.log(e.target)
+    }
+    onMouseOverHandler(e) {
+      console.log(e)
+    }
+    onCopyHandler(e) {
+      console.log('Copying is fine!')
+    }
     render() {
       return (
         <div className = "app-content">
           <h1>Hey Guys!</h1>
-          <p>{Math.random() * 10}</p>
+          <p>Name: {this.state.name} Age: {this.state.age}</p>
+          <button onClick= {this.clickHandler}>Click Here!</button>
+          <button onMouseOver= {this.onMouseOverHandler}>Hover Here!</button>
+          <p onCopy={this.onCopyHandler}>Copy text over here</p>
         </div>
       )
     }
