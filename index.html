@@ -18,13 +18,16 @@
       name: 'James',
       age: 20
     }
-    clickHandler(e) {
-      console.log(e.target)
+    clickHandler = (e) => {  //arrow function is used to retain the value of 'this' keyword
+      this.setState({
+        name: 'JKJ'
+      })
+      console.log(this.state)
     }
-    onMouseOverHandler(e) {
+    onMouseOverHandler = (e) => {
       console.log(e)
     }
-    onCopyHandler(e) {
+    onCopyHandler = (e) => {
       console.log('Copying is fine!')
     }
     render() {
