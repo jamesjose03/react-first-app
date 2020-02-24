@@ -30,6 +30,16 @@
     onCopyHandler = (e) => {
       console.log('Copying is fine!')
     }
+    onChangeHandler = (e) => {
+      this.setState({
+        name: e.target.value
+      })
+    }
+
+    onSubmitHandler = (e) => {
+      e.preventDefault();
+      console.log('form submitted' + this.state.name)
+    }
     render() {
       return (
         <div className = "app-content">
@@ -38,6 +48,10 @@
           <button onClick= {this.clickHandler}>Click Here!</button>
           <button onMouseOver= {this.onMouseOverHandler}>Hover Here!</button>
           <p onCopy={this.onCopyHandler}>Copy text over here</p>
+          <form onSubmit={this.onSubmitHandler}>
+          <input type ="text" onChange={this.onChangeHandler}/>
+          <button>Submit</button>
+          </form>
         </div>
       )
     }
